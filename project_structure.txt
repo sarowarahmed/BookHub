@@ -1,0 +1,44 @@
+book_recommendation_engine/
+│
+├── app/
+│   ├── __init__.py           # Flask application factory
+│   ├── config.py             # Configuration settings
+│   ├── models/               # Database models
+│   │   ├── __init__.py
+│   │   ├── user.py           # User model
+│   │   ├── book.py           # Book model
+│   │   └── associations.py   # Association tables and relationships
+│   │
+│   ├── routes/               # Route blueprints
+│   │   ├── __init__.py
+│   │   ├── auth.py           # Authentication routes
+│   │   ├── books.py          # Book-related routes
+│   │   ├── admin.py          # Admin routes
+│   │   └── user.py           # User profile and dashboard routes
+│   │
+│   ├── services/             # Business logic
+│   │   ├── __init__.py
+│   │   ├── book_service.py   # Book-related operations
+│   │   ├── google_books.py   # Google Books API interactions
+│   │   └── recommender.py    # Recommendation engine
+│   │
+│   ├── static/               # Static assets
+│   │   ├── css/
+│   │   ├── js/
+│   │   └── images/
+│   │
+│   └── templates/            # Jinja2 templates
+│       ├── base.html         # Base template
+│       ├── auth/             # Authentication templates
+│       ├── books/            # Book-related templates
+│       ├── admin/            # Admin panel templates
+│       └── user/             # User profile templates
+│
+├── migrations/               # Database migrations (Flask-Migrate)
+│
+├── instance/                 # Instance-specific config and database
+│   └── book_app.db           # SQLite database file
+│
+├── requirements.txt          # Project dependencies
+├── run.py                    # Application entry point
+└── README.md                 # Project documentation
