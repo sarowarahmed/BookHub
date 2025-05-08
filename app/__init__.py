@@ -34,3 +34,24 @@ def create_app():
     migrate.init_app(app, db)
     login_manager.init_app(app)
     bcrypt.init_app(app)
+
+    #configure_login
+    login_manager.login_view = 'auth.login'
+    login_manager.login_message_category = 'info'
+
+    #register blueprints
+    from app.routes.auth import auth_bp
+    from app.routes.books import books_bp
+    from app.routes.user import user_bp
+    from app.routes.admin import admin_bp
+    
+    app.register_blueprint(auth_bp)
+    app.register_blueprint(books_bp)
+    app.register_blueprint(user_bp)
+    app.register_blueprint(admin_bp)
+
+    # Create database tables if they don't exist
+    with app.app_context():
+        db.create_all()
+
+    return app    
